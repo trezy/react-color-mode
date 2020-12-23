@@ -10,7 +10,8 @@ module.exports = {
 	entry: './lib/index.js',
 	externals: {
 		process: '_',
-		react: 'React',
+		react: 'react',
+		'react/jsx-runtime': 'react/jsx-runtime',
 	},
 	mode: 'development',
 	module: {
