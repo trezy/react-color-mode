@@ -1,9 +1,5 @@
 // Module imports
-import {
-	cleanup,
-	fireEvent,
-	render,
-} from '@testing-library/react'
+import { render } from '@testing-library/react'
 import React from 'react'
 import renderer from 'react-test-renderer'
 
