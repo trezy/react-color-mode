@@ -1,26 +1,30 @@
 {
-	"name": "next-color-mode",
-	"version": "1.0.0",
-	"author": "Trezy <tre@trezy.com>",
-	"license": "BSD-3-Clause",
-	"main": "dist/index.js",
-	"module": "dist/index.mjs",
-	"scripts": {
-		"build": "webpack --mode production",
-		"dev": "webpack -w"
-	},
-	"peerDependencies": {
-		"next": "^9.5.0",
-		"react": "^17.0.0"
-	},
-	"devDependencies": {
-		"@babel/core": "^7.12.1",
-		"@babel/preset-env": "^7.12.1",
-		"@babel/preset-react": "^7.12.10",
-		"babel-loader": "^8.2.2",
-		"react": "^17.0.1",
-		"semantic-release": "^17.2.1",
-		"webpack": "^5.11.0",
-		"webpack-cli": "^4.2.0"
-	}
+  "name": "next-color-mode",
+  "version": "1.0.0",
+  "author": "Trezy <tre@trezy.com>",
+  "license": "BSD-3-Clause",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack -w",
+    "test": "jest"
+  },
+  "peerDependencies": {
+    "next": "^9.5.0",
+    "react": "^17.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "babel-jest": "^26.6.3",
+    "babel-loader": "^8.2.2",
+    "jest": "^26.6.3",
+    "react": "^17.0.1",
+    "react-test-renderer": "^17.0.1",
+    "semantic-release": "^17.2.1",
+    "webpack": "^5.11.0",
+    "webpack-cli": "^4.2.0"
+  }
 }
