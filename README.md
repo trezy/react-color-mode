@@ -9,7 +9,6 @@
 * npm or Yarn
 * Node.js
 * React 16.8+
-* Next.js 9.5+
 
 ### Installation
 
