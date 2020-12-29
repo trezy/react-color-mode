@@ -1,4 +1,4 @@
-# react-color-mode
+# Introduction
 
 `react-color-mode` makes it easy to support your user's color mode preference, whether they like light mode, dark mode, or they want you to respect their system preferences.
 
@@ -50,9 +50,9 @@ yarn add react-color-mode
 
 #### Install the script
 
-`react-color-mode` exports a `<script>` tag to be injected into your `<head>`. This script allows us to setup the color mode before the rest of the page is loaded, preventing the page from flickering on page load. It needs to be installed in your [custom document](https://nextjs.org/docs/advanced-features/custom-document) (Learn more about custom documents at https://nextjs.org/docs/advanced-features/custom-document):
+`react-color-mode` exports a `<script>` tag to be injected into your `<head>`. This script allows us to setup the color mode before the rest of the page is loaded, preventing the page from flickering on page load. It needs to be installed in your [custom document](https://nextjs.org/docs/advanced-features/custom-document) \(Learn more about custom documents at [https://nextjs.org/docs/advanced-features/custom-document](https://nextjs.org/docs/advanced-features/custom-document)\):
 
-```js
+```javascript
 // pages/_document.js
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { ColorModeScript } from 'react-color-mode'
@@ -75,18 +75,18 @@ export default class MyDocument extends Document {
 }
 ```
 
-See the [Configuration](#configuration) section for details on how to make `react-color-mode` a bit more flexible.
+See the [Configuration](./#configuration) section for details on how to make `react-color-mode` a bit more flexible.
 
 ## Exports
 
 ### `<ColorModeScript>`
 
-`<ColorModeScript>` handles setting up the color mode before the rest of your Next.js application has loaded. See [Install the script](#install-the-script) for installation details.
+`<ColorModeScript>` handles setting up the color mode before the rest of your Next.js application has loaded. See [Install the script](./#install-the-script) for installation details.
 
-| Prop          | Default           | Description                                                                                                   |
-|---------------|-------------------|---------------------------------------------------------------------------------------------------------------|
-| `defaultMode` | `system`          | default color mode is used if one hasn't been explicitly set by your app; can be `system`, `light`, or `dark` |
-| `storageKey`  | `react-color-mode` | this is the key that will be set on the `<html>` element, as well as in `localStorage`                        |
+| Prop | Default | Description |
+| :--- | :--- | :--- |
+| `defaultMode` | `system` | default color mode is used if one hasn't been explicitly set by your app; can be `system`, `light`, or `dark` |
+| `storageKey` | `react-color-mode` | this is the key that will be set on the `<html>` element, as well as in `localStorage` |
 
 #### Example
 
@@ -100,12 +100,12 @@ See the [Configuration](#configuration) section for details on how to make `reac
 
 `<ColorModeContextProvider>` provides a `React.Context` from which you can access and update the current color mode.
 
-*NOTE:* Make sure to use the same values for `defaultMode` and `storageKey` on both `<ColorModeScript>` and `<ColorModeContextProvider>`, otherwise you may still see a color mode flash when loading the app.
+_NOTE:_ Make sure to use the same values for `defaultMode` and `storageKey` on both `<ColorModeScript>` and `<ColorModeContextProvider>`, otherwise you may still see a color mode flash when loading the app.
 
-| Prop          | Default           | Description                                                                                                   |
-|---------------|-------------------|---------------------------------------------------------------------------------------------------------------|
-| `defaultMode` | `system`          | default color mode is used if one hasn't been explicitly set by your app; can be `system`, `light`, or `dark` |
-| `storageKey`  | `react-color-mode` | this is the key that will be set on the `<html>` element, as well as in `localStorage`                        |
+| Prop | Default | Description |
+| :--- | :--- | :--- |
+| `defaultMode` | `system` | default color mode is used if one hasn't been explicitly set by your app; can be `system`, `light`, or `dark` |
+| `storageKey` | `react-color-mode` | this is the key that will be set on the `<html>` element, as well as in `localStorage` |
 
 #### Example
 
@@ -126,9 +126,9 @@ export default function App({ Component, pageProps }) {
 
 ### `ColorModeContext`
 
-`ColorModeContext` provides access to all of the data made available by `<ColorModeContextProvider>`. This is mostly exposed for use in class components; if you're using function components, use [`useColorMode`](#usecolormode) instead.
+`ColorModeContext` provides access to all of the data made available by `<ColorModeContextProvider>`. This is mostly exposed for use in class components; if you're using function components, use [`useColorMode`](./#usecolormode) instead.
 
-*NOTE:* `<ColorModeContextProvider>` must be available in a higher scope* for this to be used.
+_NOTE:_ `<ColorModeContextProvider>` must be available in a higher scope\* for this to be used.
 
 #### Example
 
@@ -195,4 +195,5 @@ export function DarkModeComponent() {
 
 ## Acknowledgments
 
-* Thanks to @joshwcomeau for his excellent article: https://www.joshwcomeau.com/react/dark-mode/
+* Thanks to @joshwcomeau for his excellent article: [https://www.joshwcomeau.com/react/dark-mode/](https://www.joshwcomeau.com/react/dark-mode/)
+
