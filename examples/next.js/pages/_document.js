@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { ColorModeScript } from 'next-color-mode'
+import { ColorModeScript } from 'react-color-mode'
 
 export default class MyDocument extends Document {
   render() {

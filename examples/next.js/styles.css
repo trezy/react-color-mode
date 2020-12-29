@@ -5,7 +5,7 @@
 }
 
 /* Dark mode styles */
-:root[next-color-mode="dark"] {
+:root[react-color-mode="dark"] {
   background-color: black;
   color: white;
 }
@@ -14,9 +14,9 @@
 @media (prefers-color-scheme: dark) {
   /*
    * This rule will apply when the system is set to dark mode, and the color
-   * mode HAS NOT been overidden by next-color-mode.
+   * mode HAS NOT been overidden by react-color-mode.
    */
-	:root:not([next-color-mode="light"]) {
+	:root:not([react-color-mode="light"]) {
     background-color: black;
     color: white;
 	}

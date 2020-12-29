@@ -3,7 +3,7 @@ import './index.css'
 import {
 	ColorModeContextProvider,
 	ColorModeScript,
-} from 'next-color-mode'
+} from 'react-color-mode'
 import React from 'react'
 import ReactDOM from 'react-dom'
 

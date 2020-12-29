@@ -1,4 +1,4 @@
-import { useColorMode } from 'next-color-mode'
+import { useColorMode } from 'react-color-mode'
 
 export default function Home() {
   const {
