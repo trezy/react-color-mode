@@ -6,9 +6,10 @@ on:
       - main
       - next
       - beta
+      - alpha
 
 jobs:
-  install-packages:
+  release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
