@@ -2,6 +2,10 @@
 
 This library was originally designed to work with Next.js, so integrating it is *beautifully* simple.
 
+## Install the script
+
+It needs to be installed in your [custom document](https://nextjs.org/docs/advanced-features/custom-document) \(Learn more about custom documents at [https://nextjs.org/docs/advanced-features/custom-document](https://nextjs.org/docs/advanced-features/custom-document)\)
+
 ## Deploy your own
 
 Deploy the example using [Vercel](https://vercel.com):

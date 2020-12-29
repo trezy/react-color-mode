@@ -1,13 +1,17 @@
 # Table of contents
 
-* [Introduction](README.md)
+* [Introduction](./README.md)
+* [Getting Started](docs/getting-started.md)
 
-## Examples <a id="examples-1"></a>
+## Recipes
+* [Next.js](docs/recipes/nextjs.md)
 
-* [README](examples-1/next.js.md)
-* [README](examples-1/create-react-app.md)
+## API
+* [`<ColorModeScript>`](docs/api/colormodeScript.md)
+* [`<ColorModeContextProvider>`](docs/api/colormodecontextprovider.md)
+* [`ColorModeContext`](docs/api/colormodecontext.md)
+* [`useColorMode`](docs/api/usecolormode.md)
 
 ## Other Important Stuff
 
-* [Code of Conduct](other-important-stuff/code_of_conduct.md)
-
+* [Code of Conduct](./CODE_OF_CONDUCT.md)
