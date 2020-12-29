@@ -1,0 +1,23 @@
+/* Default styles (no mode set) */
+:root {
+  background-color: white;
+  color: black;
+}
+
+/* Dark mode styles */
+:root[next-color-mode="dark"] {
+  background-color: black;
+  color: white;
+}
+
+/* System dark mode */
+@media (prefers-color-scheme: dark) {
+  /*
+   * This rule will apply when the system is set to dark mode, and the color
+   * mode HAS NOT been overidden by next-color-mode.
+   */
+	:root:not([next-color-mode="light"]) {
+    background-color: black;
+    color: white;
+	}
+}

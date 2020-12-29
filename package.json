@@ -1,18 +1,17 @@
 {
   "name": "next-color-mode",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "author": "Trezy <tre@trezy.com>",
   "license": "BSD-3-Clause",
   "main": "dist/index.js",
-  "module": "dist/index.mjs",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack -w",
     "test": "jest"
   },
   "peerDependencies": {
-    "next": "^9.5.0",
-    "react": "^17.0.0"
+    "next": ">=9.5.0",
+    "react": ">=16.14.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
