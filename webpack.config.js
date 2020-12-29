@@ -29,7 +29,7 @@ module.exports = {
 	output: {
 		filename: 'index.js',
 		globalObject: 'this',
-		library: 'next-color-mode',
+		library: 'react-color-mode',
 		libraryTarget: 'umd',
 		path: path.resolve(__dirname, 'dist'),
 	},

@@ -11,7 +11,7 @@ describe('setLocalColorMode', () => {
 		setLocalColorMode({}, newColorMode)
 
 		const rootElement = document.querySelector('html')
-		expect(rootElement.getAttribute('next-color-mode')).toEqual(newColorMode)
+		expect(rootElement.getAttribute('react-color-mode')).toEqual(newColorMode)
 	})
 
 	// test('with invalid color mode', () => {

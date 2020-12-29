@@ -1,4 +1,6 @@
-# next-color-mode
+# react-color-mode
+
+`react-color-mode` makes it easy to support your user's color mode preference, whether they like light mode, dark mode, or they want you to respect their system preferences.
 
 ## Quick Start
 
@@ -12,18 +14,18 @@
 ### Installation
 
 ```bash
-npm install next-color-mode
+npm install react-color-mode
 
 # OR
 
-yarn add next-color-mode
+yarn add react-color-mode
 ```
 
 ### Usage
 
 #### Setup your styles
 
-`next-color-mode` will set a special attribute on your `<html>` tag, allowing you to style your site based on it.
+`react-color-mode` will set a special attribute on your `<html>` tag, allowing you to style your site based on it.
 
 ```css
 /* Set default light mode colors on <html> */
@@ -33,14 +35,14 @@ yarn add next-color-mode
 }
 
 /* User is in light mode, but has selected dark mode */
-:root[next-color-mode="dark"] {
+:root[react-color-mode="dark"] {
   background-color: black;
   color: white;
 }
 
 /* User is in dark mode and HAS NOT has selected light mode */
 @media (prefers-color-scheme: dark) {
-  :root:not([next-color-mode="light"]) {
+  :root:not([react-color-mode="light"]) {
     background-color: black;
     color: white;
   }
@@ -49,12 +51,12 @@ yarn add next-color-mode
 
 #### Install the script
 
-`next-color-mode` exports a `<script>` tag to be injected into your `<head>`. This script allows us to setup the color mode before the rest of the page is loaded, preventing the page from flickering on page load. It needs to be installed in your [custom document](https://nextjs.org/docs/advanced-features/custom-document) (Learn more about custom documents at https://nextjs.org/docs/advanced-features/custom-document):
+`react-color-mode` exports a `<script>` tag to be injected into your `<head>`. This script allows us to setup the color mode before the rest of the page is loaded, preventing the page from flickering on page load. It needs to be installed in your [custom document](https://nextjs.org/docs/advanced-features/custom-document) (Learn more about custom documents at https://nextjs.org/docs/advanced-features/custom-document):
 
 ```js
 // pages/_document.js
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { ColorModeScript } from 'next-color-mode'
+import { ColorModeScript } from 'react-color-mode'
 
 export default class MyDocument extends Document {
   render() {
@@ -74,7 +76,7 @@ export default class MyDocument extends Document {
 }
 ```
 
-See the [Configuration](#configuration) section for details on how to make `next-color-mode` a bit more flexible.
+See the [Configuration](#configuration) section for details on how to make `react-color-mode` a bit more flexible.
 
 ## Exports
 
@@ -85,7 +87,7 @@ See the [Configuration](#configuration) section for details on how to make `next
 | Prop          | Default           | Description                                                                                                   |
 |---------------|-------------------|---------------------------------------------------------------------------------------------------------------|
 | `defaultMode` | `system`          | default color mode is used if one hasn't been explicitly set by your app; can be `system`, `light`, or `dark` |
-| `storageKey`  | `next-color-mode` | this is the key that will be set on the `<html>` element, as well as in `localStorage`                        |
+| `storageKey`  | `react-color-mode` | this is the key that will be set on the `<html>` element, as well as in `localStorage`                        |
 
 #### Example
 
@@ -104,13 +106,13 @@ See the [Configuration](#configuration) section for details on how to make `next
 | Prop          | Default           | Description                                                                                                   |
 |---------------|-------------------|---------------------------------------------------------------------------------------------------------------|
 | `defaultMode` | `system`          | default color mode is used if one hasn't been explicitly set by your app; can be `system`, `light`, or `dark` |
-| `storageKey`  | `next-color-mode` | this is the key that will be set on the `<html>` element, as well as in `localStorage`                        |
+| `storageKey`  | `react-color-mode` | this is the key that will be set on the `<html>` element, as well as in `localStorage`                        |
 
 #### Example
 
 ```jsx
 // pages/_app.js
-import { ColorModeContextProvider } from 'next-color-mode'
+import { ColorModeContextProvider } from 'react-color-mode'
 
 export default function App({ Component, pageProps }) {
   return (
@@ -132,7 +134,7 @@ export default function App({ Component, pageProps }) {
 #### Example
 
 ```jsx
-import { ColorModeContext } from 'next-color-mode'
+import { ColorModeContext } from 'react-color-mode'
 
 export class DarkModeComponent extends React.Component {
   static contextType = ThemeContext
@@ -157,17 +159,41 @@ export class DarkModeComponent extends React.Component {
 #### Example
 
 ```jsx
-import { useColorMode } from 'next-color-mode'
+import { useColorMode } from 'react-color-mode'
 
 export function DarkModeComponent() {
-  const { colorMode } = useColorMode()
+  const {
+    colorMode,
+    updateColorMode,
+  } = useColorMode()
   const isDarkMode = colorMode === 'dark'
 
   return (
     <div style={{
       backgroundColor: isDarkMode ? 'black' : 'white',
       color: isDarkMode ? 'white' : 'black',
-    }} />
+    }}>
+      Hello!
+      <button
+        disabled={colorMode === 'dark'}
+        onClick={() => updateColorMode('dark')}>
+        Dark mode
+      </button>
+      <button
+        disabled={colorMode === 'light'}
+        onClick={() => updateColorMode('light')}>
+        Light mode
+      </button>
+      <button
+        disabled={colorMode === 'system'}
+        onClick={() => updateColorMode('system')}>
+        System mode
+      </button>
+    </div>
   )
 }
 ```
+
+## Acknowledgments
+
+* Thanks to @joshwcomeau for his excellent article: https://www.joshwcomeau.com/react/dark-mode/

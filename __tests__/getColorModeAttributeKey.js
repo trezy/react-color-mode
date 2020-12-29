@@ -7,7 +7,7 @@ import { getColorModeAttributeKey } from '../lib/getColorModeAttributeKey'
 
 describe('getColorModeAttributeKey', () => {
 	test('with defaults', () => {
-		expect(getColorModeAttributeKey({})).toEqual('next-color-mode')
+		expect(getColorModeAttributeKey({})).toEqual('react-color-mode')
 	})
 
 	test('with custom storage key', () => {

@@ -17,7 +17,7 @@ import { ColorModeScript } from '../lib/ColorModeScript'
 describe('ColorModeScript', () => {
 	test('with defaults', () => {
 		const colorMode = 'system'
-		const storageKey = 'next-color-mode'
+		const storageKey = 'react-color-mode'
 		const testID = 'color-mode-script'
 		const { getByTestId } = render(
 			<ColorModeScript data-testid={testID} />
@@ -58,7 +58,7 @@ describe('ColorModeScript', () => {
 	// TODO: Figure out how to get <script> tags to execute
 	xtest('with custom default mode', () => {
 		const colorMode = 'dark'
-		const storageKey = 'next-color-mode'
+		const storageKey = 'react-color-mode'
 		const testID = 'color-mode-script'
 		const { getByTestId } = render(
 			<ColorModeScript
