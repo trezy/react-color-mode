@@ -1,12 +1,14 @@
 {
   "name": "react-color-mode",
+  "version": "0.0.0-development",
   "author": "Trezy <tre@trezy.com>",
   "license": "BSD-3-Clause",
   "main": "dist/index.js",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack -w",
-    "test": "jest"
+    "test": "jest",
+    "semantic-release": "semantic-release"
   },
   "peerDependencies": {
     "next": ">=9.5.0",
@@ -23,8 +25,12 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-test-renderer": "^17.0.1",
-    "semantic-release": "^17.2.1",
+    "semantic-release": "^17.3.1",
     "webpack": "^5.11.0",
     "webpack-cli": "^4.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/trezy/next-color-mode.git"
   }
 }
