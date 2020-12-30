@@ -44,7 +44,12 @@ jobs:
           path: dist/
 
       - name: Test
-        run: yarn test
+        run: yarn test --coverage
+
+      - name: Report coverage
+        uses: coverallsapp/github-action@v1.1.0
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Release
         run: npx semantic-release
