@@ -1,14 +1,14 @@
 // Local imports
-import { setLocalColorMode } from '../lib/setLocalColorMode'
+import { setLocalColorModePreference } from '../lib/setLocalColorModePreference'
 
 
 
 
 
-describe('setLocalColorMode', () => {
+describe('setLocalColorModePreference', () => {
 	test('with defaults', () => {
 		const newColorMode = 'dark'
-		setLocalColorMode({}, newColorMode)
+		setLocalColorModePreference({}, newColorMode)
 
 		const rootElement = document.querySelector('html')
 		expect(rootElement.getAttribute('react-color-mode')).toEqual(newColorMode)
@@ -16,7 +16,7 @@ describe('setLocalColorMode', () => {
 
 	// test('with invalid color mode', () => {
 	// 	expect(() => {
-	// 		setLocalColorMode({}, 'bork')
+	// 		setLocalColorModePreference({}, 'bork')
 	// 	}).toThrow()
 	// })
 
@@ -25,7 +25,7 @@ describe('setLocalColorMode', () => {
 			storageKey: 'custom-storage-key',
 		}
 		const newColorMode = 'dark'
-		setLocalColorMode(config, newColorMode)
+		setLocalColorModePreference(config, newColorMode)
 
 		const rootElement = document.querySelector('html')
 		expect(rootElement.getAttribute(config.storageKey)).toEqual(newColorMode)

@@ -17,7 +17,7 @@ import {
 	ColorModeContextProvider,
 	useColorMode,
 } from '../lib/ColorModeContext'
-import { setLocalColorMode } from '../lib/setLocalColorMode'
+import { setLocalColorModePreference } from '../lib/setLocalColorModePreference'
 
 
 
@@ -31,7 +31,7 @@ describe('ColorModeContextProvider', () => {
 		function testUpdateColorModeWithConfig(testName, config) {
 			test(testName, () => {
 				// Force local color mode
-				setLocalColorMode((config.defaultConfig || {}), config.initialColorMode)
+				setLocalColorModePreference((config.defaultConfig || {}), config.initialColorMode)
 
 				const { getByTestId } = render((
 					<ColorModeContextProvider {...(config.defaultConfig || {})}>
@@ -94,7 +94,7 @@ describe('ColorModeContextProvider', () => {
 		function testUpdateColorModeWithConfig(testName, config) {
 			test(testName, () => {
 				// Force local color mode
-				setLocalColorMode((config.defaultConfig || {}), config.initialColorMode)
+				setLocalColorModePreference((config.defaultConfig || {}), config.initialColorMode)
 
 				function Consumer() {
 					const { colorMode, updateColorMode } = useColorMode()
