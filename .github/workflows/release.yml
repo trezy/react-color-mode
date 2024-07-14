@@ -37,7 +37,7 @@ jobs:
       - name: Compile
         run: yarn build
 
-      - name: Upload Compiled Files (@parked/core)
+      - name: Upload Compiled Files
         uses: actions/upload-artifact@v2
         with:
           name: compiled-files
